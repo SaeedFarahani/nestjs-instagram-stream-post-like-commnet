@@ -7,7 +7,7 @@ dist/*
 !/dist/v6
 !/dist/v7
 !/dist/v8
-
+.env
 /tmp
 /out-tsc
 

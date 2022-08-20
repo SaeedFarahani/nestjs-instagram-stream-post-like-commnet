@@ -1,12 +1,12 @@
 import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { CommentLikeService } from './comment-like/comment-like.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly commentLikeService: CommentLikeService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Get('check-comment-likes')
+  async checkLikes() {
+    return this.commentLikeService.monitorComments();
   }
 }
